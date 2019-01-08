@@ -35,18 +35,23 @@
         if(!empty($_POST)) {
 
             include "Cupcake.php";
+            $isValid = true;
 
-            if(!empty($_POST)){
-                echo "Thank you, ".$_POST["username"].", for your order!";
-                if(!empty($_POST["flavor"])){
-
-                    foreach($_POST['flavor[]'] as $flavor){
-                        printCupcakeFlavors($flavor);
-                    }
+            if(!empty($_POST['username'])){
+                if(isset($_POST['flavor'])){
+                    echo "Thank you, ".$_POST["username"].", for your order!<br><br>";
+                    echo "Order Summary:<br>";
+                    printCupcakeFlavors($_POST['flavor']);
                 }
+
             }
             else{
-                echo "Error: name is missing";
+                echo "Error: name or flavor selection is missing";
+                $isValid = false;
+            }
+
+            if ($isValid){
+
             }
         }
         ?>
