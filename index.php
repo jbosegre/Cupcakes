@@ -62,10 +62,6 @@
                 echo "Error: name or flavor selection is missing";
                 $isValid = false;
             }
-
-            if ($isValid){
-
-            }
         }
         ?>
 </body>

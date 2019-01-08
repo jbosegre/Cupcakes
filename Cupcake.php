@@ -9,21 +9,28 @@
  * for all selected cupcakes
  */
 
-$flavor = array("grasshopper"=>"The Grasshopper", "maple"=>"Whiskey Maple Bar",
-    "carrot"=>"Carrot Walnut", "caramel"=>"Salted Caramel", "velvet"=>"Red Velvet",
-    "lemon"=>"Lemon Drop", "tiramisu"=>"Tiramisu");
+$flavor = array("The Grasshopper"=>"grasshopper", "Whiskey Maple Bar"=>"maple",
+    "Carrot Walnut"=>"carrot", "Salted Caramel"=>"caramel", "Red Velvet"=>"velvet",
+    "Lemon Drop"=>"lemon", "Tiramisu"=>"tiramisu");
 $flavorCount = 0;
 $perCupcake = number_format(3.50, 2);
 
-function printCupcakeFlavors($flavor)
-{
+function printCupcakeFlavors($flavor){
     global $flavorCount;
 
    foreach($flavor as $taste => $description) {
-       echo $description . "<br>";
+       echo "&bull; ".$description . "<br>";
        $flavorCount++;
    }
 }
+
+function viewCupcakeFlavors($flavor){
+    global $flavor;
+    foreach($flavor as $taste => $description) {
+        echo "<input type=\"checkbox\" name=\"".$flavor."\" value=\"".$taste."\"> $description<br>";
+    }
+}
+
 
 function totalCost(){
     global $flavorCount, $perCupcake;
