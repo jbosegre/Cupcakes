@@ -1,3 +1,14 @@
+<!--
+ * Created by PhpStorm.
+ * User: jbosegre
+ * Date: 1/7/2019
+ * Time: 10:20 AM
+ * This file is the index of the cupcakes website
+ * it takes the username and checkbox input for cupcake flavors
+ * and prints out your name, selection and total cost of the cupcakes
+ */
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +53,8 @@
                     echo "Thank you, ".$_POST["username"].", for your order!<br><br>";
                     echo "Order Summary:<br>";
                     printCupcakeFlavors($_POST['flavor']);
+                    echo "<br>Order Total: $";
+                    echo totalCost();
                 }
 
             }
